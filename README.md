@@ -34,8 +34,6 @@ npm install
 npm run dev
 ```
 
-This starts the frontend on http://localhost:3000 and expects the backend at `http://localhost:8080/api`. You can change the API URL in `frontend/.env`.
-
 ## Notes & Extensibility
 - Cache is configured in `backend/CacheConfig.java` using Caffeine; tweak `maximumSize` and `expireAfterWrite`.
 - To add Redis, swap Spring Cache manager for RedisCacheManager and provide Redis configuration.
