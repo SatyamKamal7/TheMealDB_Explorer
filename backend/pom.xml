@@ -5,37 +5,41 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- IMPORTANT: Spring Boot parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>com.example</groupId>
     <artifactId>themealdb-proxy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>themealdb-proxy</name>
-    <description>Backend proxy for TheMealDB API</description>
 
     <properties>
         <java.version>17</java.version>
-        <spring.boot.version>3.2.0</spring.boot.version>
     </properties>
 
     <dependencies>
 
-        <!-- Spring Boot Web -->
+        <!-- Spring Boot web starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Jackson Databind -->
+        <!-- Jackson databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.15.2</version>
         </dependency>
 
-        <!-- Spring Boot Test -->
+        <!-- Spring Boot test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring.boot.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -44,11 +48,10 @@
     <build>
         <plugins>
 
-            <!-- Spring Boot Plugin -->
+            <!-- Spring Boot plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version>
             </plugin>
 
         </plugins>
