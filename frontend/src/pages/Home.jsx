@@ -1,29 +1,13 @@
-import { useEffect, useState } from "react";
-import SearchBar from "../components/SearchBar";
 import CategoryBrowser from "../components/CategoryBrowser";
 import RandomMeal from "../components/RandomMeal";
+import SearchBar from "../components/SearchBar";
 
-function Home() {
-  const [searchResults, setSearchResults] = useState([]);
-
+export default function Home() {
   return (
-    <div className="p-6">
-      <SearchBar setSearchResults={setSearchResults} />
-
-      {searchResults.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-          {searchResults.map((meal) => (
-            <RandomMeal key={meal.idMeal} meal={meal} />
-          ))}
-        </div>
-      ) : (
-        <>
-          <CategoryBrowser />
-          <RandomMeal />
-        </>
-      )}
+    <div className="home-container">
+      <SearchBar />
+      <RandomMeal />
+      <CategoryBrowser />
     </div>
   );
 }
-
-export default Home;

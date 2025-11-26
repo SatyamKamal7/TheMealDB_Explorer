@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import MealDetails from "./pages/MealDetails.jsx";
+import Home from "./pages/Home";
+import MealDetails from "./pages/MealDetails";
+import "./index.css";
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#2b0a12] text-white">
+      <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/meal/:id" element={<MealDetails />} />
@@ -14,5 +15,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
